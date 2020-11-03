@@ -9,31 +9,26 @@ class Plane {
 private:
     // Data
     int id;
-    int actualArrival;
-    int actualDeparture;
-    int scheduledArrival;
-    int scheduledDeparture;
+    int actualTime;
+    int scheduledTime;
     bool isLanded;
+    //introduce isTakenOff ?
     
 public:
 
     // Constructor
-    Plane(int id, int arr, int dep, int sArr, int sDep);
+    Plane(int id, int aT, int sT);
 
     // Getter Functions
     int getId();
-    int getActualArrival();
-    int getActualDeparture();
-    int getScheduledArrival();
-    int getScheduledDeparture();
+    int getActualTime();
+    int getScheduledTime();
     bool getIsLanded();
 
     // Setter Functions
     void setId(int val);
-    void setActualArrival(int val);
-    void setActualDeparture(int val);
-    void setScheduledArrival(int val);
-    void setScheduledDeparture(int val);
+    void setActualTime(int val);
+    void setScheduledTime(int val);
     void setIsLanded(bool val);
 
     // Friend Functions
@@ -42,27 +37,19 @@ public:
 
 // Definitions of member functions and constructors, in order
 
-Plane::Plane(int id, int arr, int dep, int sArr, int sDep)
-    : id(id), actualArrival(arr), actualDeparture(dep), scheduledArrival(sArr), scheduledDeparture(sDep), isLanded(false){}
+Plane::Plane(int id, int aT, int sT)
+    : id(id), actualTime(aT), scheduledT(sT), isLanded(false){}
 
 int Plane::getId(){
     return id;
 }
 
-int Plane::getActualArrival(){
-    return actualArrival;
+int Plane::getActualTime(){
+    return actualTime;
 }
 
-int Plane::getActualDeparture(){
-    return actualDeparture;
-}
-
-int Plane::getScheduledArrival(){
-    return scheduledArrival;
-}
-
-int Plane::getScheduledDeparture(){
-    return scheduledDeparture;
+int Plane::getScheduledTime(){
+    return scheduledTime;
 }
 
 bool Plane::getIsLanded(){
@@ -73,20 +60,12 @@ void Plane::setId(int val){
     id = val;
 }
 
-void Plane::setActualArrival(int val){
-    actualArrival = val;
+void Plane::setActualTime(int val){
+    actualTime = val;
 }
 
-void Plane::setActualDeparture(int val){
-    actualDeparture = val;
-}
-
-void Plane::setScheduledArrival(int val){
-    scheduledArrival = val;
-}
-
-void Plane::setScheduledDeparture(int val){
-    scheduledDeparture = val;
+void Plane::setScheduledTime(int val){
+    scheduledTime = val;
 }
 
 void Plane::setIsLanded(bool val){
@@ -95,10 +74,8 @@ void Plane::setIsLanded(bool val){
 
 void showPlane(Plane &p){
     cout << "id: " << p.id << '\n'
-        << "actualArrival: " <<  p.actualArrival << '\n'
-        << "actualDeparture: " <<  p.actualDeparture << '\n'
-        << "scheduledArrival: " <<  p.scheduledArrival << '\n'
-        << "scheduledDeparture: " <<  p.scheduledDeparture << '\n'
+        << "actualTime: " <<  p.actualTime << '\n'
+        << "scheduledTime: " <<  p.scheduledTime << '\n'
         << "isLanded: " <<  p.isLanded << '\n';
 }
 
